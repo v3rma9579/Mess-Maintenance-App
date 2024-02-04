@@ -1,4 +1,7 @@
 import 'dart:ui';
+import 'package:learn/drawer.dart';
+import 'package:learn/test.dart';
+
 import 'components/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -50,14 +53,14 @@ class LoginState extends State<Login> {
                     child: Image(
                       image: AssetImage('../assets/bitlogo.png'),
                     )),
-                Text(
+                const Text(
                   "Mess Management System",
                   style: TextStyle(
                       fontSize: 18,
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 TextFieldd(
                     controller: username,
                     hintText: 'Enter Username',
@@ -66,24 +69,25 @@ class LoginState extends State<Login> {
                     controller: password,
                     hintText: 'Enter Password',
                     ispassword: true),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
-                    onPressed: () async {
-                      try {
-                        final credential = await FirebaseAuth.instance
-                            .signInWithEmailAndPassword(
-                                email: username.text, password: password.text);
-                      } on FirebaseAuthException catch (e) {
-                        if (e.code == 'user-not-found') {
-                          print('No user found for that email.');
-                        } else if (e.code == 'wrong-password') {
-                          print('Wrong password provided for that user.');
-                        }
-                      }
-                      print(username.text);
-                      print(password.text);
-                    },
-                    child: Text('Login'))
+                    onPressed: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => const DrawerScreen())),
+                    //  async {
+                    //   try {
+                    //     final credential = await FirebaseAuth.instance
+                    //         .signInWithEmailAndPassword(
+                    //             email: username.text, password: password.text);
+                    //   } on FirebaseAuthException catch (e) {
+                    //     if (e.code == 'user-not-found') {
+                    //       print('No user found for that email.');
+                    //     } else if (e.code == 'wrong-password') {
+                    //       print('Wrong password provided for that user.');
+                    //     }
+                    //   }
+                    //   print(username.text);
+                    //   print(password.text);
+                    // },
+                    child: const Text('Login'))
               ]),
             ),
           ),
