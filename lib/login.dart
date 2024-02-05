@@ -1,13 +1,15 @@
 import 'dart:ui';
 import 'package:learn/drawer.dart';
-import 'package:learn/test.dart';
+// import 'package:learn/test.dart';
 
 import 'components/textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import "./admin.dart";
+// import 'package:firebase_auth/firebase_auth.dart';
+// import "./admin.dart";
 
 class Login extends StatefulWidget {
+  const Login({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return LoginState();
@@ -35,7 +37,7 @@ class LoginState extends State<Login> {
             ),
             child: Container(
               height: 400,
-              width: 600,
+              width: 500,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   gradient: LinearGradient(colors: [
@@ -71,7 +73,10 @@ class LoginState extends State<Login> {
                     ispassword: true),
                 const SizedBox(height: 10),
                 ElevatedButton(
-                    onPressed: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => const DrawerScreen())),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DrawerScreen())),
                     //  async {
                     //   try {
                     //     final credential = await FirebaseAuth.instance
@@ -87,7 +92,7 @@ class LoginState extends State<Login> {
                     //   print(username.text);
                     //   print(password.text);
                     // },
-                    child: const Text('Login'))
+                    child: const Text('Login')),
               ]),
             ),
           ),

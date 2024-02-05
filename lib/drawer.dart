@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn/login.dart';
+import 'package:learn/mail.dart';
+import 'package:learn/profile.dart';
 // import 'package:learn/test.dart';
 // import 'package:web_dashboard_app_tut/screens/test.dart';
 
@@ -20,28 +22,32 @@ class DrawerScreenState extends State<DrawerScreen> {
       child: Scaffold(
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.white),
-          title: const Text(""), backgroundColor: Colors.blue.shade600,
+          title: const Text(""),
+          backgroundColor: Colors.blue.shade600,
           actions: [
             IconButton(
-                onPressed: () => Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Login())),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Login())),
                 icon: SizedBox(
-                    width: 25,
-                    child: Image.asset('../../assets/power2.png')))
+                    width: 25, child: Image.asset('../../assets/power2.png')))
           ],
         ),
-        body: Container(
-          // color: Colors.red,
-          height: 400,
-          width: 400,
-          margin: const EdgeInsets.all(30),
-          child: const Align(
-            alignment: Alignment.topLeft,
-            child: Text('Student Dashboard\nWelcome SHUBHAM VERMA, Love to see you again.')
+        body: Padding(
+          padding: const EdgeInsets.all(2),
+          child: Container(
+            padding: const EdgeInsets.symmetric(),
+            height: 150,
+            width: 150,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/man.png"),
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
         ),
         drawer: Drawer(
-          semanticLabel: "hello",
+          semanticLabel: "",
           child: ListView(
             children: [
               Center(
@@ -56,20 +62,20 @@ class DrawerScreenState extends State<DrawerScreen> {
                       padding: const EdgeInsets.only(bottom: 25),
                       child: const Text(
                         'Mess Maintenance',
-                        style:
-                            TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
                       ),
                     ),
                   ],
                 ),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DrawerScreen())),
                 leading: const Icon(Icons.home),
                 title: const Text("Home"),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage())),
                 leading: const Icon(Icons.person),
                 title: const Text("Profile"),
               ),
@@ -79,13 +85,19 @@ class DrawerScreenState extends State<DrawerScreen> {
                 title: const Text("View Mess Bill"),
               ),
               ListTile(
-                onTap: () {},
+               onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const EmailComposer())),
                 leading: const Icon(Icons.mail),
                 title: const Text("Raise Complaints"),
               ),
               ListTile(
                 onTap: () {},
-                leading:  SizedBox(width: 30,child: Image.asset('../../assets/menu.png',),),
+                leading: SizedBox(
+                  width: 30,
+                  child: Image.asset(
+                    '../../assets/menu.png',
+                  ),
+                ),
                 title: const Text("Mess Menu"),
               ),
               ListTile(
@@ -94,7 +106,8 @@ class DrawerScreenState extends State<DrawerScreen> {
                 title: const Text("View Notice"),
               ),
               ListTile(
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => Login())),
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Login())),
                 leading: const Icon(Icons.logout),
                 title: const Text("Logout"),
               ),
