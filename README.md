@@ -2,6 +2,16 @@
 
 # Mess Maintenance System
 
+[![](https://badgen.net/badge/Build-with/Flutter/)](https://docs.flutter.dev/)
+[![](badges/powered-by-pyqt.svg)](https://www.riverbankcomputing.com/software/pyqt/)
+
+[![Maintainer](https://img.shields.io/badge/maintainer-Shubham-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/v3rma9579)
+[![Maintainer](https://img.shields.io/badge/maintainer-Harsh-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/Harsh4662)
+[![Maintainer](https://img.shields.io/badge/maintainer-Utkarsh-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/itsutkarsh1)
+[![Maintainer](https://img.shields.io/badge/maintainer-Aakash-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/itsutkarsh1)
+
+[![GitHub contributors](https://img.shields.io/github/contributors/v3rma9579/MediaPlayer?logo=github&labelColor=black&color=ff3399)](https://github.com/v3rma9579/Mess-Maintenance-App/graph/contributors)
+
 This is a flutter project based on BIT Mess Maintenance System.
 
 
