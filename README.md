@@ -3,7 +3,7 @@
 # Mess Maintenance System
 
 [![](https://badgen.net/badge/Build-with/Flutter/)](https://docs.flutter.dev/)
-[![](badges/powered-by-pyqt.svg)](https://www.riverbankcomputing.com/software/pyqt/)
+
 
 [![Maintainer](https://img.shields.io/badge/maintainer-Shubham-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/v3rma9579)
 [![Maintainer](https://img.shields.io/badge/maintainer-Harsh-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/Harsh4662)
@@ -52,6 +52,13 @@ flutter run
 - The ability to use Git and GitHub
 - Some knowledge of Flutter and how to use Android Studio or Visual Studio is preferrable for a head start.
 - UI/UX Design skills are appreciable but not mandatory
+
+
+## GALLERY
+
+1. Home Page
+
+![img.png](screenshots/home-page.png)
 
 ## License
 
