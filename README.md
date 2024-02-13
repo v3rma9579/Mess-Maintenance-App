@@ -2,7 +2,7 @@
 
 # Mess Maintenance System
 
-[![](https://badgen.net/badge/Build-with/Flutter/)](https://docs.flutter.dev/) <img alt="Top Language used in Signature" src="https://img.shields.io/github/languages/top/aratheunseen/signature?style=for-the-badge&logo=dart&color=lightblue">
+[![](screenshots/build-with-flutter.svg)](https://docs.flutter.dev/)  [![](screenshots/powered-by-dart.svg)](https://dart.dev/) 
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/v3rma9579)
 
@@ -71,8 +71,7 @@ This project follows the [MIT License](/LICENSE).
 
 
 <a href="https://github.com/v3rma9579" target="_blank">
-<!-- <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
-</a>
-<a href="https://www.linkedin.com/in/swapnil-srivastava-sparsh/" target="_blank">
-<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" /> -->
+
+<a href="https://www.linkedin.com/in/shubham-verma-b1a2b6238/" target="_blank">
+<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
 </a>
