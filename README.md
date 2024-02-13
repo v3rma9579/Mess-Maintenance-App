@@ -2,7 +2,9 @@
 
 # Mess Maintenance System
 
-[![](https://badgen.net/badge/Build-with/Flutter/)](https://docs.flutter.dev/)
+[![](https://badgen.net/badge/Build-with/Flutter/)](https://docs.flutter.dev/) <img alt="Top Language used in Signature" src="https://img.shields.io/github/languages/top/aratheunseen/signature?style=for-the-badge&logo=dart&color=lightblue">
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/v3rma9579)
 
 
 [![Maintainer](https://img.shields.io/badge/maintainer-Shubham-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/v3rma9579)
@@ -37,11 +39,12 @@ git clone https://github.com/v3rma9579/Mess-Maintenance-App
 cd \Mess-Maintenance-App
 ```
 
-  ##### To run the app, simply write
+  ##### Install all dependencies
 ```bash
 flutter pub get
 ```
-
+ 
+ ##### To run the app simply write
 ```bash
 flutter run
 ```
@@ -64,9 +67,8 @@ flutter run
 
 This project follows the [MIT License](/LICENSE).
 
-#### Made this project with ♥
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/v3rma9579)
+
 
 <a href="https://github.com/v3rma9579" target="_blank">
 <!-- <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
