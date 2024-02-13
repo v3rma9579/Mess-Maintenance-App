@@ -66,7 +66,7 @@ This project follows the [MIT License](/LICENSE).
 
 #### Made this project with ♥
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/v3rma9579)/)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/v3rma9579)
 
 <a href="https://github.com/v3rma9579" target="_blank">
 <!-- <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
