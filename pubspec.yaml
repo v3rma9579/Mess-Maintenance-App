@@ -37,6 +37,13 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core : 
   firebase_auth: ^4.16.0
+  google_fonts: ^6.1.0
+  flutter_secure_storage: ^9.0.0
+  recase: ^4.1.0
+  http: ^1.2.0
+  sizer: ^2.0.15
+  fl_chart: ^0.66.2
+  pie_chart: ^5.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -68,6 +75,7 @@ flutter:
     - assets/profilepic.jpg
     - assets/user.png
     - assets/man.png
+    - assets/pic3.jpg
     # - assets/bitlogo.png
   # To add assets to your application, add an assets section, like this:
   # assets:

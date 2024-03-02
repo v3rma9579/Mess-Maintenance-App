@@ -1,386 +1,204 @@
 import 'package:flutter/material.dart';
 import 'package:learn/drawer.dart';
-// import 'package:flutter/cupertino.dart';
+import 'package:learn/login.dart';
+import 'package:learn/settings.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({super.key});
-
-  @override
-  MapScreenState createState() => MapScreenState();
-}
-
-class MapScreenState extends State<ProfilePage>
-    with SingleTickerProviderStateMixin {
-  bool _status = true;
-  final FocusNode myFocusNode = FocusNode();
-
-  @override
-  void initState() {
-    super.initState();
-  }
+class SettingsUI extends StatelessWidget {
+  const SettingsUI({super.key});
 
   @override
   Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "",
+      home: EditProfilePage(),
+    );
+  }
+}
+
+class EditProfilePage extends StatefulWidget {
+  const EditProfilePage({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _EditProfilePageState createState() => _EditProfilePageState();
+}
+
+class _EditProfilePageState extends State<EditProfilePage> {
+  bool showPassword = false;
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      color: Colors.white,
-      child: ListView(
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Container(
-                height: 250.0,
-                color: Colors.white,
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                        padding: const EdgeInsets.only(left: 20.0, top: 20.0),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            ListTile(
-                            onTap: () =>  Navigator.push(context, MaterialPageRoute(builder: (context) => const DrawerScreen())),
-                            leading: const Icon(Icons.arrow_back),
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.only(left: 25.0),
-                              child: Text('PROFILE',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20.0,
-                                      fontFamily: 'sans-serif-light',
-                                      color: Colors.black)),
-                            )
-                          ],
-                        )),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20.0),
-                      child: Stack(fit: StackFit.loose, children: <Widget>[
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Container(
-                                width: 140.0,
-                                height: 140.0,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: DecorationImage(
-                                    image:
-                                        ExactAssetImage('assets/profile.jpg'),
-                                    fit: BoxFit.cover,
-                                  ),
-                                )),
-                          ],
-                        ),
-                        const Padding(
-                            padding: EdgeInsets.only(top: 90.0, right: 100.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                CircleAvatar(
-                                  backgroundColor: Colors.red,
-                                  radius: 25.0,
-                                  child: Icon(
-                                    Icons.camera_alt,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
-                            )),
-                      ]),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                color: const Color(0xffFFFFFF),
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 25.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                          padding: const EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 25.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              const Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Text(
-                                    'Personal Information',
-                                    style: TextStyle(
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  _status ? _getEditIcon() : Container(),
-                                ],
-                              )
-                            ],
-                          )),
-                      const Padding(
-                          padding: EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 25.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Text(
-                                    'Name',
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          )),
-                      Padding(
-                          padding: const EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 2.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              Flexible(
-                                child: TextField(
-                                  decoration: const InputDecoration(
-                                    labelText: "Shubham Verma",
-                                  ),
-                                  enabled: !_status,
-                                  autofocus: !_status,
-                                ),
-                              ),
-                            ],
-                          )),
-                      const Padding(
-                          padding: EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 25.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Text(
-                                    'Email ID',
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          )),
-                      Padding(
-                          padding: const EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 2.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              Flexible(
-                                child: TextField(
-                                  decoration: const InputDecoration(
-                                      labelText: "shubhamverma286008@gmail.com"),
-                                  enabled: !_status,
-                                ),
-                              ),
-                            ],
-                          )),
-                      const Padding(
-                          padding: EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 25.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Text(
-                                    'Mobile',
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          )),
-                      Padding(
-                          padding: const EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 2.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: <Widget>[
-                              Flexible(
-                                child: TextField(
-                                  decoration: const InputDecoration(
-                                      hintText: "7979705025"),
-                                  enabled: !_status,
-                                ),
-                              ),
-                            ],
-                          )),
-                      Padding(
-                          padding: const EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 25.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              Expanded(
-                                flex: 2,
-                                child: Container(
-                                  child: const Text(
-                                    'Pin Code',
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                flex: 2,
-                                child: Container(
-                                  child: const Text(
-                                    'State',
-                                    style: TextStyle(
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )),
-                      Padding(
-                          padding: const EdgeInsets.only(
-                              left: 25.0, right: 25.0, top: 2.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: <Widget>[
-                              Flexible(
-                                flex: 2,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(right: 10.0),
-                                  child: TextField(
-                                    decoration: const InputDecoration(
-                                        hintText: "Enter Pin Code"),
-                                    enabled: !_status,
-                                  ),
-                                ),
-                              ),
-                              Flexible(
-                                flex: 2,
-                                child: TextField(
-                                  decoration: const InputDecoration(
-                                      hintText: "Enter State"),
-                                  enabled: !_status,
-                                ),
-                              ),
-                            ],
-                          )),
-                      !_status ? _getActionButtons() : Container(),
-                    ],
-                  ),
-                ),
-              )
-            ],
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 1,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.blue,
+          ),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const DrawerScreen())),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.settings,
+              color: Colors.blue,
+            ),
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => const SettingsPage()));
+            },
           ),
         ],
       ),
-    ));
-  }
-
-  @override
-  void dispose() {
-    // Clean up the controller when the Widget is disposed
-    myFocusNode.dispose();
-    super.dispose();
-  }
-
-  Widget _getActionButtons() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 45.0),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: const EdgeInsets.only(right: 10.0),
-              child: Container(
-                  child: ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _status = true;
-                    FocusScope.of(context).requestFocus(FocusNode());
-                  });
-                },
-                // shape: RoundedRectangleBorder(
-                //     borderRadius: BorderRadius.circular(20.0)),
-                child: const Text("Save"),
-              )),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10.0),
-              child: Container(
-                  // child: RaisedButton(
-                  //   child: const Text("Cancel"),
-                  //   textColor: Colors.white,
-                  //   color: Colors.red,
-                  //   onPressed: () {
-                  //     setState(() {
-                  //       _status = true;
-                  //       FocusScope.of(context).requestFocus(FocusNode());
-                  //     });
-                  //   },
-                  //   shape: RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.circular(20.0)),
-                  // )),
+      body: Container(
+        padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
+        child: GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+          },
+          child: ListView(
+            children: [
+              const Text(
+                "Edit Profile",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Center(
+                child: Stack(
+                  children: [
+                    Container(
+                      width: 130,
+                      height: 130,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              width: 4,
+                              color: Theme.of(context).scaffoldBackgroundColor),
+                          boxShadow: [
+                            BoxShadow(
+                                spreadRadius: 2,
+                                blurRadius: 10,
+                                color: Colors.black.withOpacity(0.1),
+                                offset: const Offset(0, 10))
+                          ],
+                          shape: BoxShape.circle,
+                          image: const DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/profile.jpg'),
+                          )),
+                    ),
+                    Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              width: 4,
+                              color: Theme.of(context).scaffoldBackgroundColor,
+                            ),
+                            color: Colors.blue,
+                          ),
+                          child: const Icon(
+                            Icons.edit,
+                            color: Colors.white,
+                          ),
+                        )),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 35,
+              ),
+              buildTextField("Full Name", "Shubham Verma", false),
+              buildTextField("E-mail", "sv28194@gmail.com", false),
+              buildTextField("Password", "********", true),
+              buildTextField("Location", "Jharkhand", false),
+              const SizedBox(
+                height: 35,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    // padding: EdgeInsets.symmetric(horizontal: 50),
+                    // shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(20)),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DrawerScreen())),
+                    child: const Text("CANCEL",
+                        style: TextStyle(
+                            fontSize: 14,
+                            letterSpacing: 2.2,
+                            color: Color.fromARGB(255, 196, 7, 7))),
                   ),
-            ),
-          )
-        ],
+                  ElevatedButton(
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const DrawerScreen())),
+                    // color: Colors.green,
+                    // padding: EdgeInsets.symmetric(horizontal: 50),
+                    // elevation: 2,
+                    // shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(20)),
+                    child: const Center(
+                      child: Text(
+                        "SAVE",
+                        style: TextStyle(
+                            fontSize: 14,
+                            letterSpacing: 2.2,
+                            color: Color.fromARGB(255, 87, 198, 91)),
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
 
-  Widget _getEditIcon() {
-    return GestureDetector(
-      child: const CircleAvatar(
-        backgroundColor: Colors.red,
-        radius: 14.0,
-        child: Icon(
-          Icons.edit,
-          color: Colors.white,
-          size: 16.0,
-        ),
+  Widget buildTextField(
+      String labelText, String placeholder, bool isPasswordTextField) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 35.0),
+      child: TextField(
+        obscureText: isPasswordTextField ? showPassword : false,
+        decoration: InputDecoration(
+            suffixIcon: isPasswordTextField
+                ? IconButton(
+                    onPressed: () {
+                      setState(() {
+                        showPassword = !showPassword;
+                      });
+                    },
+                    icon: const Icon(
+                      Icons.remove_red_eye,
+                      color: Colors.grey,
+                    ),
+                  )
+                : null,
+            contentPadding: const EdgeInsets.only(bottom: 3),
+            labelText: labelText,
+            floatingLabelBehavior: FloatingLabelBehavior.always,
+            hintText: placeholder,
+            hintStyle: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            )),
       ),
-      onTap: () {
-        setState(() {
-          _status = false;
-        });
-      },
     );
   }
 }

@@ -1,7 +1,12 @@
+// ignore_for_file: unused_local_variable
+
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:learn/login.dart';
 import 'package:learn/mail.dart';
+import 'package:learn/menu.dart';
 import 'package:learn/profile.dart';
+import 'package:learn/test.dart';
 // import 'package:learn/test.dart';
 // import 'package:web_dashboard_app_tut/screens/test.dart';
 
@@ -17,6 +22,9 @@ class DrawerScreen extends StatefulWidget {
 class DrawerScreenState extends State<DrawerScreen> {
   @override
   Widget build(BuildContext context) {
+    final Map<String, double> dataMap;
+
+  // const PieChart({super.key, required this.dataMap});
     return TooltipVisibility(
       visible: false,
       child: Scaffold(
@@ -24,30 +32,46 @@ class DrawerScreenState extends State<DrawerScreen> {
           iconTheme: const IconThemeData(color: Colors.white),
           title: const Text(""),
           backgroundColor: Colors.blue.shade600,
+          
           actions: [
             IconButton(
                 onPressed: () => Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Login())),
                 icon: SizedBox(
-                    width: 25, child: Image.asset('../../assets/power2.png')))
+                    width: 25, child: Image.asset('../../assets/power2.png'))),
           ],
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(2),
-          child: Container(
-            padding: const EdgeInsets.symmetric(),
-            height: 150,
-            width: 150,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/man.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ),
+        // body: Padding(
+        //   padding: const EdgeInsets.all(2),
+        //   child: Container(
+        //     padding: const EdgeInsets.symmetric(),
+        //     height: 150,
+        //     width: 150,
+        //     decoration: const BoxDecoration(
+        //       image: DecorationImage(
+        //         image: AssetImage("assets/man.png"),
+        //         fit: BoxFit.cover,
+        //       ),
+        //     ),
+        //   ),
+
+        // ),
+
+        // body: const Center(
+        //   child: PieChart(
+        //     dataMap : {
+        //       'Flutter' : 50,
+        //       'React Native' : 30,
+        //       'Ionic' : 20,
+        //     }
+
+        //   ),
+        // ),
+        
+        drawerEnableOpenDragGesture: true,
         drawer: Drawer(
           semanticLabel: "",
+          
           child: ListView(
             children: [
               Center(
@@ -70,12 +94,19 @@ class DrawerScreenState extends State<DrawerScreen> {
                 ),
               ),
               ListTile(
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DrawerScreen())),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DrawerScreen())),
                 leading: const Icon(Icons.home),
                 title: const Text("Home"),
               ),
               ListTile(
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage())),
+                // onTap: () {},
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const EditProfilePage())),
                 leading: const Icon(Icons.person),
                 title: const Text("Profile"),
               ),
@@ -85,13 +116,23 @@ class DrawerScreenState extends State<DrawerScreen> {
                 title: const Text("View Mess Bill"),
               ),
               ListTile(
-               onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const EmailComposer())),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const EmailComposer())),
                 leading: const Icon(Icons.mail),
                 title: const Text("Raise Complaints"),
               ),
               ListTile(
-                onTap: () {},
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>  const DrawerScreen())),
+                leading: const Icon(Icons.feedback),
+                title: const Text("Feedback"),
+              ),
+              ListTile(
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const MessMenu())),
                 leading: SizedBox(
                   width: 30,
                   child: Image.asset(
@@ -118,3 +159,14 @@ class DrawerScreenState extends State<DrawerScreen> {
     );
   }
 }
+
+class PieChart extends StatelessWidget {
+  final Map<String, double> dataMap;
+
+  const PieChart({super.key, required this.dataMap});
+  
+  @override
+  Widget build(BuildContext context) {
+    throw UnimplementedError();
+  }
+  }

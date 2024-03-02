@@ -15,13 +15,16 @@ class TextFieldState extends State<TextFieldd> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       width: 350,
       child: TextFormField(
         obscureText: widget.ispassword,
         controller: widget.controller,
         decoration: InputDecoration(
-            border: OutlineInputBorder(), labelText: widget.hintText),
+          labelStyle: const TextStyle(
+            color: Colors.white,
+          ),
+            border: const OutlineInputBorder(), labelText: widget.hintText),
       ),
     );
   }
