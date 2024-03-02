@@ -2,6 +2,18 @@
 
 # Mess Maintenance System
 
+[![](screenshots/build-with-flutter.svg)](https://docs.flutter.dev/)  [![](screenshots/powered-by-dart.svg)](https://dart.dev/) 
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/v3rma9579)
+
+
+[![Maintainer](https://img.shields.io/badge/maintainer-Shubham-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/v3rma9579)
+[![Maintainer](https://img.shields.io/badge/maintainer-Harsh-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/Harsh4662)
+[![Maintainer](https://img.shields.io/badge/maintainer-Utkarsh-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/itsutkarsh1)
+[![Maintainer](https://img.shields.io/badge/maintainer-Aakash-blue/?logo=github&labelColor=black&color=00cc00)](https://github.com/AAKASHCHAUDHARY02)
+
+[![GitHub contributors](https://img.shields.io/github/contributors/v3rma9579/MediaPlayer?logo=github&labelColor=black&color=ff3399)](https://github.com/v3rma9579/Mess-Maintenance-App/graph/contributors)
+
 This is a flutter project based on BIT Mess Maintenance System.
 
 
@@ -27,11 +39,12 @@ git clone https://github.com/v3rma9579/Mess-Maintenance-App
 cd \Mess-Maintenance-App
 ```
 
-  ##### To run the app, simply write
+  ##### Install all dependencies
 ```bash
 flutter pub get
 ```
-
+ 
+ ##### To run the app simply write
 ```bash
 flutter run
 ```
@@ -43,17 +56,22 @@ flutter run
 - Some knowledge of Flutter and how to use Android Studio or Visual Studio is preferrable for a head start.
 - UI/UX Design skills are appreciable but not mandatory
 
+
+## GALLERY
+
+1. Home Page
+
+![img.png](screenshots/home-page.png)
+
 ## License
 
 This project follows the [MIT License](/LICENSE).
 
-#### Made this project with ♥
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://swapnilsparsh.github.io/)
+
 
 <a href="https://github.com/v3rma9579" target="_blank">
-<!-- <img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
-</a>
-<a href="https://www.linkedin.com/in/swapnil-srivastava-sparsh/" target="_blank">
-<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" /> -->
+
+<a href="https://www.linkedin.com/in/shubham-verma-b1a2b6238/" target="_blank">
+<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
 </a>
